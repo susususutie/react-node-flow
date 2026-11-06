@@ -1,0 +1,59 @@
+{
+  "name": "@fedkit/react-node-flow",
+  "version": "0.1.0",
+  "description": "基于 React 19 + TypeScript 从零实现的节点流编辑器：支持画布平移缩放、节点拖拽、拖拽连线、5 种内置边类型、MiniMap、Background 与自定义节点/边，无第三方流程图依赖。",
+  "homepage": "https://susususutie.github.io/react-node-flow/",
+  "bugs": {
+    "url": "https://github.com/susususutie/react-node-flow/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/susususutie/react-node-flow.git",
+    "directory": "packages/react-node-flow"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./style.css": "./src/style.css",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": "./dist/index.mjs",
+      "./style.css": "./dist/style.css",
+      "./package.json": "./package.json"
+    },
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "vp pack --watch",
+    "build": "vp pack",
+    "test": "vp test",
+    "check": "vp check",
+    "prepublishOnly": "vp run build"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "jsdom": "^29.1.1",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plus": "catalog:"
+  },
+  "peerDependencies": {
+    "react": ">=19",
+    "react-dom": ">=19"
+  }
+}

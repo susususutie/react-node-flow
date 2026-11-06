@@ -1,0 +1,32 @@
+/* 句柄默认隐藏：常显会干扰节点展示。命中区仍然存在，可正常点击起拖。 */
+.node-flow__handle {
+  opacity: 0;
+  transition:
+    opacity 120ms ease,
+    background-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+/* 非连线状态：悬停节点时露出该节点的句柄，让“从哪里开始连线”可被发现 */
+.node-flow__node:hover .node-flow__handle {
+  opacity: 1;
+}
+
+/* 连线拖拽中：关闭上面的“整节点露出”，改由下方半径规则精确控制。
+   特异度 (0,4,0)，压过上面的节点 hover 规则 (0,3,0)。 */
+.nf-connecting .node-flow__node:hover .node-flow__handle {
+  opacity: 0;
+}
+
+/* 连线拖拽中：起点句柄常亮。
+   特异度同为 (0,4,0) 且位置靠后，会胜过上面的抑制规则。 */
+.nf-connecting .node-flow__node .node-flow__handle.nf-handle-source {
+  opacity: 1;
+}
+
+/* 连线拖拽中：仅指针附近的 target 句柄亮起，远处保持隐藏。
+   特异度同为 (0,4,0) 且位置靠后，会胜过上面的抑制规则。 */
+.nf-connecting .node-flow__node .node-flow__handle.nf-handle-near {
+  opacity: 1;
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 0.3);
+}

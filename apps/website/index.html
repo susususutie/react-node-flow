@@ -4,10 +4,30 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>website</title>
+    <meta
+      name="description"
+      content="React Node Flow：从零实现的 React 节点流编辑器，支持平移缩放、节点拖拽、连线、缩略图与自定义节点。"
+    />
+    <title>React Node Flow</title>
+    <style>
+      :root {
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

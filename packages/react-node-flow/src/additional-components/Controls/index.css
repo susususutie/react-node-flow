@@ -1,0 +1,37 @@
+.control-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 26px;
+  width: 26px;
+  padding: 4px;
+  border: none;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  user-select: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.control-button:last-of-type {
+  border-bottom: none;
+}
+
+.control-button:hover {
+  background-color: #f4f4f4;
+}
+
+.control-button:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.control-button > svg {
+  width: 100%;
+  max-width: 12px;
+  max-height: 12px;
+  fill: currentColor;
+}
+.control-button:disabled > svg {
+  fill-opacity: 0.4;
+}
